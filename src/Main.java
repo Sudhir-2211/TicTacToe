@@ -1,4 +1,5 @@
-public class Main {
+public class Main
+{
 
     // Create a 3x3 character array
     static char[][] board = new char[3][3];
