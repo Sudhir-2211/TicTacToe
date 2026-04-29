@@ -1,26 +1,25 @@
+package org.example;
+
+import java.util.Scanner;
+
 public class Main {
 
-    // Create a 3x3 character array
-    static char[][] board = new char[3][3];
     public static void main(String[] args) {
-        Initialize();
-        printboard();
-    }
-    static void Initialize(){
-        // Initialize all cells with '-'
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                board[i][j] = '-';
-            }
-        }}
 
-    static void printboard(){
-        // Print the board
-        System.out.println("Empty Tic-Tac-Toe Board:");
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                System.out.print(board[i][j] + " ");
-            }
-            System.out.println();
-        }
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter slot (1-9): ");
+        int slot = sc.nextInt();
+
+        System.out.println("Row: " + getRowFromSlot(slot));
+        System.out.println("Column: " + getColFromSlot(slot));
     }
+
+    static int getRowFromSlot(int slot) {
+        return (slot - 1) / 3;
+    }
+
+    static int getColFromSlot(int slot) {
+        return (slot - 1) % 3;
+    }
+}
